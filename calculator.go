@@ -11,7 +11,7 @@ func Subtract(a, b int) int {
 }
 
 func Multiply(a, b int) int {
-    return a * b
+    return a *  b
 }
 
 func Divide(a, b float64) (float64, error) {
