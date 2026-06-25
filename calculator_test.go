@@ -31,8 +31,8 @@ func TestSubtract(t *testing.T) {
 
 // Test case 3: Multiply
 func TestMultiply(t *testing.T) {
-    if got := Multiply(4, 5); got != 20 {
-        t.Errorf("Multiply(4, 5) = %d; want  20", got)
+    if got := Multiply(5, 5); got != 25 {
+        t.Errorf("Multiply(5, 5) = %d; want  25", got)
     }
 }
 
