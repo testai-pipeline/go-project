@@ -1,0 +1,29 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Target environment (development / staging / production)"
+        required: false
+        default: "development"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment || 'development' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Log deployment info
+        run: |
+          echo "Deploying branch: ${{ github.ref_name }}"
+          echo "Target environment: ${{ github.event.inputs.environment || 'development' }}"
+          echo "Triggered by: ${{ github.actor }}"
+          echo "Commit: ${{ github.sha }}"
+
+      - name: Deploy (placeholder)
+        run: |
+          echo "Add your deployment steps here."
+          echo "Examples: kubectl apply, docker push, terraform apply, aws ecs update-service, etc."
+          echo "Deploy complete."
